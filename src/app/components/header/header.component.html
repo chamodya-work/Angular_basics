@@ -1,1 +1,12 @@
-<p>header works!</p>
+<div class="toggle-container">
+    <mat-slide-toggle [(ngModel)]="isFlipped">Toggle Animation</mat-slide-toggle>
+</div>
+
+<div class="card" [class.flipped]="isFlipped">
+    <div class="card-face card-front">
+        OFF ❌
+    </div>
+    <div class="card-face card-back">
+        ON ✅
+    </div>
+</div>
