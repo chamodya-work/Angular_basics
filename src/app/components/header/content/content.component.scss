@@ -1,0 +1,30 @@
+.example-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.sidenav {
+    width: 250px;
+    background-color: #f5f5f5;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content {
+    height: 100%;
+}
+
+/* Debug: Highlight multiple sidebars */
+mat-drawer:nth-child(1) {
+    border: 2px solid red;
+    /* First sidenav will have a red border */
+}
+
+mat-drawer:nth-child(2) {
+    border: 2px solid blue;
+    /* Second sidenav will have a blue border */
+}

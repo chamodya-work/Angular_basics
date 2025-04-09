@@ -5,14 +5,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class MenuService {
+  private isOpenedSubject = new BehaviorSubject<boolean>(false); // Changed to false
+  isOpened = this.isOpenedSubject.asObservable();
 
   constructor() { }
 
-  public isOpened = new BehaviorSubject<boolean>(false);
-  public opened = false
-
-  public toggle() {
-    this.opened = !this.opened;
-    this.isOpened.next(this.opened);
+  toggle() {
+    this.isOpenedSubject.next(!this.isOpenedSubject.value);
   }
 }
