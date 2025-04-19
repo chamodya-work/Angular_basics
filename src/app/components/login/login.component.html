@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div class="card" style="padding: 20px;">
-        <form action="">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
             <input type="text" ngModel name="username" id="username" placeholder="Username" class="form-control mb-3"
                 required>
             <input type="password" ngModel name="password" id="password" placeholder="Password"
