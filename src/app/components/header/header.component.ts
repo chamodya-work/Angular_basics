@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MenuService } from '../../service/menu.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UserAuthService } from '../../service/user-auth.service';
 import { NgIf } from '@angular/common';
 
@@ -17,7 +17,8 @@ import { NgIf } from '@angular/common';
 export class HeaderComponent {
   constructor(
     private menuService: MenuService,
-    private userAuthService: UserAuthService
+    private userAuthService: UserAuthService,
+    private router: Router
   ) { }
 
   toggleMenu() {
@@ -26,6 +27,11 @@ export class HeaderComponent {
 
   public isLoggedIn() {
     return this.userAuthService.isLoggedIn();
+  }
+
+  public logOut() {
+    this.userAuthService.clear();
+    this.router.navigate(['/home']);
   }
 
 }
