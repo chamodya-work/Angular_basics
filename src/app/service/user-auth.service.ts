@@ -27,4 +27,12 @@ export class UserAuthService {
   public clear() {
     localStorage.clear();
   }
+
+  public isLoggedIn(): boolean {
+
+
+    return !!this.getRoles() && !!this.getToken(); //in here we !! for convert result to true or false because getRoles and getToken return string or null
+  }
+
+
 }
